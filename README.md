@@ -6,7 +6,6 @@ Change your skin according to your choice. Note the configurations for now.
 Command | Alias | Permission | Default
 ------- | ----- | ---------- | --------
 /slashskin | skin | slashskin.use | op
-
 # Config
 ```
 ### IMPORTANT ###
@@ -38,3 +37,11 @@ messages:
             title: "SlashSkin"
             description: "Choose your skin."
 ```
+
+------------
+# Discord
+If problems arise, create an issue or write us on Discord.
+
+| Join now |
+| :---: |
+[![Discord](https://img.shields.io/discord/427472879072968714.svg?style=flat-square&label=discord&colorB=7289da)](https://discord.gg/Ce2aY25) |
