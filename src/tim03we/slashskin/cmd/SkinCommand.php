@@ -42,6 +42,7 @@ class SkinCommand extends Command {
         } else {
             $sender->sendMessage("Run this command InGame!");
         }
+        return false;
     }
 
     public function openList($player) {
@@ -82,7 +83,7 @@ class SkinCommand extends Command {
                 $msg = str_replace("{name}", $skin, $msg);
                 $player->sendMessage($msg);
             } else {
-                $player->sendMessage($this->plugin->cfg->getNested("messages.skin-not-exist");
+                $player->sendMessage($this->plugin->cfg->getNested("messages.skin-not-exist"));
             }
         });
         $form->setTitle($this->plugin->cfg->getNested("messages.forms.skin-list-form.title"));
