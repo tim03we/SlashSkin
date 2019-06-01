@@ -27,6 +27,7 @@ use pocketmine\command\CommandSender;
 use pocketmine\command\Command;
 use pocketmine\entity\Skin;
 use pocketmine\Player;
+use jojoe77777\FormAPI\SimpleForm;
 
 class SkinCommand extends Command {
 
@@ -46,8 +47,7 @@ class SkinCommand extends Command {
     }
 
     public function openList($player) {
-        $api = $this->plugin->getServer()->getPluginManager()->getPlugin("FormAPI");
-        $form = $api->createSimpleForm(function (Player $player, $data = null) {
+        $form = new SimpleForm(function (Player $player, $data = null) {
             $result = $data;
             if ($result === null) {
                 return true;
@@ -69,8 +69,7 @@ class SkinCommand extends Command {
     }
 
     public function openSkins($player) {
-        $api = $this->plugin->getServer()->getPluginManager()->getPlugin("FormAPI");
-        $form = $api->createSimpleForm(function (Player $player, $data = null) {
+        $form = new SimpleForm(function (Player $player, $data = null) {
             $result = $data;
             if ($result === null) {
                 return true;
