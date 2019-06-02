@@ -28,16 +28,20 @@ use pocketmine\command\Command;
 use pocketmine\entity\Skin;
 use pocketmine\Player;
 use jojoe77777\FormAPI\SimpleForm;
+use tim03we\slashskin\Main;
 
 class SkinCommand extends Command {
 
-    public function __construct(\tim03we\slashskin\Main $plugin) {
+    public function __construct(Main $plugin) {
         parent::__construct("slashskin", "Choose your skin", "/slashskin", ["skin"]);
         $this->setPermission("slashskin.use");
         $this->plugin = $plugin;
     }
 
     public function execute(CommandSender $sender, string $commandLabel, array $args) {
+        if(!$this->testPermission($sender)) {
+            return false;
+        }
         if($sender instanceof Player) {
             $this->openList($sender);
         } else {
